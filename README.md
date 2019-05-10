@@ -7,6 +7,18 @@
 * Author: Elmar Putz <ep@studiomitte.com> & Mario Rader <mr@studiomitte.com>
 * Technology: PHP 7.2
 
+## Setup
+
+* XAMPP <https://www.apachefriends.org> oder MAMP <https://www.mamp.info/en/downloads/> laden & installieren
+* Apache Document Root auf Dev-Rootverzeichnis richten
+* Go.
+
+### MySQL
+
+* Host: ```localhost```
+* User: ```root```
+* Pass: ```root```
+* Name: ```fh_scm4_bookshop```
 
 ## Code
 * Live: <https://scr42.fhooe.netacademy.at/finder>
