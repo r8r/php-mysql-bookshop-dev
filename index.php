@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<?php
+include_once("inc/bootstrap.php");
+include("views/partials/header.php");
 
-    <title>SCM4 Book Shop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+$default_view = "welcome";
+$view = $default_view;
+if (isset($_REQUEST['view']) && file_exists(__DIR__ . '/views/' . $_REQUEST['view'] . '.php')) {
+	  $view = $_REQUEST['view'];
+}
+include("views/" . $view . ".php");
 
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="assets/main.css" rel="stylesheet">
-
-  </head>
-<body>
-
-  <h1>SCM4 Book Shop</h1>
-
-  <script src="assets/jquery-1.11.2.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-</body>
-</html>
+include("views/partials/footer.php");
