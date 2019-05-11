@@ -1,10 +1,11 @@
-# Bookstore 
+# Bookstore 2019 | Gruppe 2
 
-* Institution: 
-* Class: 
-* Year: 
+* Institution: FH OÖ Hagenberg
+* Class: 17_SCR4IT2G2 – Scripting, SS19, 4. Semester Software Engineering Ba Berufsbegleitend (0307)
+* Moodle: <https://hagenberg.elearning.fh-ooe.at/course/view.php?id=8307>
+* Year: 2019
 * Author: Elmar Putz <ep@studiomitte.com> & Mario Rader <mr@studiomitte.com>
-* Technology: PHP 
+* Technology: PHP 7.2
 
 ## Setup
 
@@ -20,6 +21,6 @@
 * Name: ```fh_scm4_bookshop```
 
 ## Code
-* Live: 
-* Git Repo: <https://github.com/r8r/php-mysql-bookstore-dev>
+* Live: <https://scr42.fhooe.netacademy.at/finder>
+* Git Repo: <https://github.com/r8r/php-mysql-bookstore-dev/tree/fhooe-se-scm4-2019>
 
