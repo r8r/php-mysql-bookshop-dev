@@ -1,6 +1,6 @@
 <?php
 use
-	//Bookshop\ShoppingCart,
+	Bookshop\ShoppingCart,
 	Bookshop\Util;
 ?>
 
@@ -24,7 +24,7 @@ use
 	<tbody>
 	<?php
 	foreach ($books as $book):
-		//$inCart = ShoppingCart::contains($book->getId());
+		$inCart = ShoppingCart::contains($book->getId());
 		?>
 		<tr>
 			<td><strong>
@@ -36,10 +36,10 @@ use
 			</td>
 			<td>
 				<?php //echo money_format('%i', Util::escape($book->getPrice())); ?>
-				EUR&nbsp;<?php echo number_format($book->getPrice(), 0, ',', '.'); ?>
+				EUR&nbsp;<?php echo number_format($book->getPrice(), 2, ',', '.'); ?>
 			</td>
 			<td class="add-remove">
-				<?php /* if ($inCart): ?>
+				<?php if ($inCart): ?>
 					<form method="post" action="<?php
 					//echo Util::action(Bookshop\Controller::ACTION_REMOVE, array('bookId' => $book->getId()));
 					?>">
@@ -49,13 +49,13 @@ use
 					</form>
 				<?php else: ?>
 					<form method="post" action="<?php
-					//echo Util::action(Bookshop\Controller::ACTION_ADD, array('bookId' => $book->getId()));
+					echo Util::action(Bookshop\Controller::ACTION_ADD, array('bookId' => $book->getId()));
 					?>">
 						<button type="submit" role="button" class="btn btn-default btn-xs btn-success">
 							<span class="glyphicon glyphicon-plus"></span>
 						</button>
 					</form>
-				<?php endif; */ ?>
+				<?php endif; ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
