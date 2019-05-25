@@ -41,7 +41,7 @@ use
 			<td class="add-remove">
 				<?php if ($inCart): ?>
 					<form method="post" action="<?php
-					//echo Util::action(Bookshop\Controller::ACTION_REMOVE, array('bookId' => $book->getId()));
+					echo Util::action(Bookshop\Controller::ACTION_REMOVE, array('bookId' => $book->getId()));
 					?>">
 						<button type="submit" role="button" class="btn btn-default btn-xs btn-info">
 							<span class="glyphicon glyphicon-minus"></span>

@@ -12,7 +12,7 @@ namespace Bookshop;
 class Util extends BaseObject {
 
 	public static function escape(string $string) : string {
-		return $string;
+		return nl2br(htmlentities($string));
 	}
 
 	public static function action(string $action, array $params = null) : string {
@@ -29,6 +29,17 @@ class Util extends BaseObject {
 		}
 
 		return $res;
+	}
+
+	public static function redirect(string $page = null) {
+		if ($page == null) {
+			$page = isset($_REQUEST[Controller::PAGE]) ?
+				$_REQUEST[Controller::PAGE] :
+				$_SERVER['REQUEST_URI'];
+		}
+
+		header("Location:" . $page);
+		exit();
 	}
 
 }

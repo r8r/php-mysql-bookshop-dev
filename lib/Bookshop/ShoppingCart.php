@@ -8,8 +8,7 @@
 
 namespace Bookshop;
 
-// $_SESSION['cart']
-
+SessionContext::create();
 
 class ShoppingCart extends BaseObject {
 
@@ -23,5 +22,20 @@ class ShoppingCart extends BaseObject {
 		return array_key_exists($bookId, $cart);
 	}
 
+	public static function add(int $bookId) {
+		$cart = self::getCart();
+		$cart[$bookId] = $bookId;
+		self::storeCart($cart);
+	}
+
+	public static function remove(int $bookId) {
+		$cart = self::getCart();
+		unset($cart[$bookId]);
+		self::storeCart($cart);
+	}
+
+	public static function storeCart(array $cart) {
+		$_SESSION['cart'] = $cart;
+	}
 
 }
