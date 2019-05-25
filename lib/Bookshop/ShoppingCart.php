@@ -34,8 +34,16 @@ class ShoppingCart extends BaseObject {
 		self::storeCart($cart);
 	}
 
+	public static function size() : int {
+		return sizeof(self::getCart());
+	}
+
 	public static function storeCart(array $cart) {
 		$_SESSION['cart'] = $cart;
+	}
+
+	public static function clear() {
+		self::storeCart([]);
 	}
 
 }

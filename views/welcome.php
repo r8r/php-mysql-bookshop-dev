@@ -6,10 +6,4 @@
 
 <p>Welcome to the SCM4 book shop!</p>
 
-<?php
-
-print_r(\Bookshop\ShoppingCart::getCart());
-
-?>
-
 <?php require_once('views/partials/footer.php');
