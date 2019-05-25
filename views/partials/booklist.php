@@ -35,7 +35,8 @@ use
 				<?php echo Util::escape($book->getAuthor()); ?>
 			</td>
 			<td>
-				<?php echo money_format('%i', Util::escape($book->getPrice())); ?>
+				<?php //echo money_format('%i', Util::escape($book->getPrice())); ?>
+				EUR&nbsp;<?php echo number_format($book->getPrice(), 0, ',', '.'); ?>
 			</td>
 			<td class="add-remove">
 				<?php /* if ($inCart): ?>
