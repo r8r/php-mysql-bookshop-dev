@@ -10,7 +10,7 @@ if (isset($_REQUEST['view']) && file_exists(__DIR__ . '/views/' . $_REQUEST['vie
 // auswerten von post-daten
 $postAction = isset($_REQUEST[Bookshop\Controller::ACTION]) ? $_REQUEST[Bookshop\Controller::ACTION] : null;
 if ($postAction) {
-	
+
 }
 
 include("views/" . $view . ".php");
