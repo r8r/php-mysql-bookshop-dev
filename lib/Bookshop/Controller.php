@@ -98,7 +98,7 @@ class Controller extends BaseObject {
 		if ($nameOnCard == null || strlen($nameOnCard) == 0) {
 			$errors[] = 'Invalid name on card.';
 		}
-		if ($cardNumber == null || strlen($cardNumber) == 16 || !ctype_digit($cardNumber)) {
+		if ($cardNumber == null || strlen($cardNumber) != 16 || !ctype_digit($cardNumber)) {
 			$errors[] = 'Invalid card number. Card number must be 16 digits.';
 		}
 		if (sizeof($errors)) {
@@ -120,7 +120,7 @@ class Controller extends BaseObject {
 		}
 
 		ShoppingCart::clear();
-		Url::redirect('index.php?view=success&orderId=' . rawurlencode($orderId));
+		Util::redirect('index.php?view=success&orderId=' . rawurlencode($orderId));
 
 		return true;
 	}

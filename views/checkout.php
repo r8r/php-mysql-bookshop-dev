@@ -57,3 +57,6 @@ $cartSize = ShoppingCart::size();
 <?php else: ?>
 	<p class="errors alert alert-info">Please add some items to your cart first.</p>
 <?php endif; ?>
+
+
+<?php require_once('views/partials/footer.php');
