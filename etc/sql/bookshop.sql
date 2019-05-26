@@ -2,54 +2,31 @@ DROP DATABASE fh_scm4_bookshop;
 CREATE DATABASE fh_scm4_bookshop;
 USE fh_scm4_bookshop;
 
-
-
 CREATE TABLE books (
-
 	id int(11) NOT NULL AUTO_INCREMENT,
-
 	categoryId int(11) NOT NULL,
-
 	title varchar(255) NOT NULL,
-
 	author varchar(255) NOT NULL,
-
 	isbn varchar(255) NOT NULL,
-
 	price decimal(10,2) NOT NULL,
-
 	PRIMARY KEY (id),
-
 	KEY categoryId (categoryId)
-
 ) ENGINE=InnoDB AUTO_INCREMENT=1 CHARSET=utf8;;
-
-
 
 CREATE TABLE categories (
 	id int(11) NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL,
-
 	PRIMARY KEY (id)
-
 ) ENGINE=InnoDB AUTO_INCREMENT=1 CHARSET=utf8;;
-
-
 
 CREATE TABLE orderedbooks (
 	id int(11) NOT NULL AUTO_INCREMENT,
-
 	orderId int(11) NOT NULL,
-
 	bookId int(11) NOT NULL,
-
 	PRIMARY KEY (id),
 	KEY orderId (orderId),
 	KEY bookId (bookId)
-
 ) ENGINE=InnoDB AUTO_INCREMENT=1 CHARSET=utf8;;
-
-
 
 CREATE TABLE orders (
 	id int(11) NOT NULL AUTO_INCREMENT,
@@ -58,37 +35,26 @@ CREATE TABLE orders (
 	creditCardHolder varchar(255) NOT NULL,
 	PRIMARY KEY (id),
 	KEY userId (userId)
-
 ) ENGINE=InnoDB AUTO_INCREMENT=1 CHARSET=utf8;;
-
-
 
 CREATE TABLE users (
 	id int(11) NOT NULL AUTO_INCREMENT,
-
 	userName varchar(255) NOT NULL,
-
 	passwordHash char(40) NOT NULL,
-
 	PRIMARY KEY (id),
 	UNIQUE KEY userName (userName)
-
 ) ENGINE=InnoDB AUTO_INCREMENT=1 CHARSET=utf8;;
-
 
 ALTER TABLE books
 ADD CONSTRAINT books_ibfk_1 FOREIGN KEY (categoryId) REFERENCES categories (id) ON DELETE CASCADE ON UPDATE CASCADE;
-
 
 ALTER TABLE orderedbooks
 ADD CONSTRAINT orderedbooks_ibfk_2 FOREIGN KEY (bookId) REFERENCES books (id) ON DELETE CASCADE ON UPDATE CASCADE,
 
 ADD CONSTRAINT orderedBooks_ibfk_1 FOREIGN KEY (orderid) REFERENCES orders (id) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
 ALTER TABLE orders
 ADD CONSTRAINT orders_ibfk_1 FOREIGN KEY (userId) REFERENCES users (id) ON DELETE CASCADE ON UPDATE CASCADE;
-
 
 INSERT INTO categories VALUES (1, 'Mobile & Wireless Computing');
 INSERT INTO categories VALUES (2, 'Functional Programming');
@@ -106,4 +72,4 @@ INSERT INTO books VALUES (16, 3, 'C Programming Language (2nd Edition)', 'Brian 
 INSERT INTO books VALUES (27, 3, 'C++ Primer Plus (5th Edition)', 'Stephan Prata', ' 9780672326974', 36.94);
 INSERT INTO books VALUES (29, 3, 'The C++ Programming Language', 'Bjarne Stroustrup', '0201700735', 67.49);
 	
-INSERT INTO users VALUES (1, 'scm4', 'a8af855d47d091f0376664fe588207f334cdad22');
+INSERT INTO users VALUES (1, 'scm4', '1217550c3a2746f786f6d240d5ec8889e98662dd');
