@@ -16,7 +16,10 @@ spl_autoload_register(function ($class) {
  * DataManager
  * change to switch between different implementations … 'mock' | 'pdo'
  */
-$mode = 'mock';
+//$mode = 'mock';
+
+$mode = 'pdo';
+
 switch (mb_strtolower($mode)) {
 	case 'mysqli':
 		$class = 'mysqli';
