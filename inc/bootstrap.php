@@ -17,8 +17,8 @@ spl_autoload_register(function ($class) {
  * change to switch between different implementations … 'mock' | 'pdo'
  */
 //$mode = 'mock';
-
 $mode = 'pdo';
+//$mode = 'mysqli';
 
 switch (mb_strtolower($mode)) {
 	case 'mysqli':
