@@ -1,4 +1,4 @@
-DROP DATABASE fh_scm4_bookshop;
+DROP DATABASE IF EXISTS fh_scm4_bookshop;
 CREATE DATABASE fh_scm4_bookshop;
 USE fh_scm4_bookshop;
 
