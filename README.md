@@ -21,5 +21,5 @@
 
 ## Code
 * Live: 
-* Git Repo: <https://github.com/r8r/php-mysql-bookstore-dev>
+* Git Repo: <https://github.com/r8r/php-mysql-bookshop-dev/tree/fhooe-se-scm4-2020>
 
