@@ -1,21 +1,14 @@
 <?php
-require_once('views/partials/header.php');
-?>
 
-<div class="page-header">
-  <h2>Welcome</h2>
-</div>
+require_once('inc/bootstrap.inc.php');
 
-<?php
+$default_view = 'welcome';
+$view = $default_view;
 
-$foo = 1;
-$bar = "Under";
+if (isset($_REQUEST['view']) &&
+    file_exists(__DIR__ . '/views/' . $_REQUEST['view'] . '.php')
+) {
+  $view = $_REQUEST['view'];
+}
 
-print("Hello " . $bar . " World!");
-
-?>
-
-<p>Welcome to the SCM4 book shop!</p>
-
-<?php
-require_once('views/partials/footer.php');
+require_once('views/' . $view . '.php');
