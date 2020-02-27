@@ -1,13 +1,11 @@
 <?php
 require_once('views/partials/header.php');
 
+use Data\DataManager;
 use Bookshop\Category;
-
-
-$cat = new Category(6, 'Testkategorie');
-print 'id: ' . $cat->getId();
-print 'name: ' . $cat->getName();
-
+$categories = DataManager::getCategories();
+$categoryId = (int)$_REQUEST['categoryId'] ?? null;
+//$books = …
 ?>
   <div class="page-header">
     <h2>List of books by category</h2>
@@ -17,7 +15,7 @@ print 'name: ' . $cat->getName();
 		<?php foreach ($categories as $cat) : ?>
       <li role="presentation"
 			    <?php if ($cat->getId() === $categoryId) { print ' class="active"'; } ?>>
-        <a href="<?php echo $_SERVER['PHP_SELF'] ?>?view=list&categoryId=<?php echo urlencode($cat->getId()); ?>"><?php echo Util::escape($cat->getName()); ?></a></span>
+        <a href="<?php echo $_SERVER['PHP_SELF'] ?>?view=list&categoryId=<?php echo urlencode($cat->getId()); ?>"><?php echo ($cat->getName()); ?></a></span>
       </li>
 		<?php endforeach; ?>
   </ul>
