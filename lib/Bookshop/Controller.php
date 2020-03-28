@@ -18,6 +18,11 @@ class Controller extends BaseObject {
 	const PAGE = 'page';
 	const ACTION_ADD = 'addToCart';
 	const ACTION_REMOVE = 'removeFromCart';
+	const ACTION_LOGIN = 'login';
+	const ACTION_LOGOUT = 'logout';
+	const ACTION_ORDER = 'placeOrder';
+	const USER_NAME = 'userName';
+	const USER_PASSWORD = 'password';
 
 	private static $instance = false;
 
@@ -54,6 +59,18 @@ class Controller extends BaseObject {
 
 			case self::ACTION_REMOVE:
 				ShoppingCart::remove((int) $_REQUEST['bookId']);
+				Util::redirect();
+				break;
+
+			case self::ACTION_LOGIN:
+				if (!AuthenticationManager::authenticate($_REQUEST[self::USER_NAME], $_REQUEST[self::USER_PASSWORD])) {
+					die('error'); //TODO
+				}
+				Util::redirect();
+				break;
+
+			case self::ACTION_LOGOUT:
+				AuthenticationManager::signOut();
 				Util::redirect();
 				break;
 
