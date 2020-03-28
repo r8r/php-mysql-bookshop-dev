@@ -12,7 +12,7 @@ interface IEntity {
 	public function getId() : int;
 }
 
-class Entity implements IEntity {
+class Entity extends BaseObject implements IEntity {
 	private $id;
 
 	public function __construct(int $id) {

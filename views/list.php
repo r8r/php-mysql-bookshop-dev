@@ -4,8 +4,9 @@ require_once('views/partials/header.php');
 use Data\DataManager;
 use Bookshop\Category;
 $categories = DataManager::getCategories();
-$categoryId = (int)$_REQUEST['categoryId'] ?? null;
-//$books = …
+
+$categoryId = (int)($_REQUEST['categoryId'] ?? null);
+$books = $categoryId > 0 ? DataManager::getBooksByCategory($categoryId) : null;
 ?>
   <div class="page-header">
     <h2>List of books by category</h2>

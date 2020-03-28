@@ -18,6 +18,10 @@ spl_autoload_register(function ($class) {
 	}
 });
 
+// create session
+
+Bookshop\SessionContext::create();
+
 // include DataManager
 
 $mode = 'mock';
