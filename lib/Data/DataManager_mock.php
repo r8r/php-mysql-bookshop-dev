@@ -93,6 +93,10 @@ class DataManager
 		return null;
 	}
 
+	public static function createOrder(int $userId, array $bookIds, string $nameOnCard, string $cardNumber) : int {
+		return rand();
+	}
+
 	// /mock data
 
 

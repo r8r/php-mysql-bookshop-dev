@@ -19,8 +19,8 @@ class Book extends Entity {
 		parent::__construct($id);
 		$this->title = $title;
 		$this->author = $author;
-		$this->price = floatval($price);
-		$this->categoryId = intval($categoryId);
+		$this->price = $price;
+		$this->categoryId = $categoryId;
 	}
 
 	public function getTitle() : string {
