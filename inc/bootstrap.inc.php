@@ -24,8 +24,11 @@ Bookshop\SessionContext::create();
 
 // include DataManager
 
-$mode = 'mock';
+$mode = 'pdo';
 switch (mb_strtolower($mode)) {
+	case 'pdo':
+		$class = 'mysqlpdo';
+		break;
 	default:
 		$class = 'mock';
 		break;

@@ -12,8 +12,7 @@ use Bookshop\Category;
 use Bookshop\Book;
 use Bookshop\User;
 
-class DataManager
-//	implements IDataManager
+class DataManager implements IDataManager
 {
 
 	/**
