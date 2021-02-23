@@ -1,8 +1,8 @@
 # Bookstore 
 
-* Institution: 
-* Class: 
-* Year: 
+* Institution: FH OÖ Campus Hagenberg
+* Class: 17_SCR4IT2
+* Year: 2021
 * Author: Elmar Putz <ep@studiomitte.com> & Mario Rader <mr@studiomitte.com>
 * Technology: PHP 
 
@@ -20,6 +20,6 @@
 * Name: ```fh_scm4_bookshop```
 
 ## Code
-* Live: 
+* Live: <https://se14scr4ueg2.fhooe.netacademy.at/finder>
 * Git Repo: <https://github.com/r8r/php-mysql-bookstore-dev>
 
