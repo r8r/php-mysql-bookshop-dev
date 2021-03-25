@@ -5,6 +5,7 @@ namespace Data;
 
 use Bookshop\Category;
 use Bookshop\Book ;
+use Bookshop\User ;
 
 
 class DataManager implements IDataManager {
@@ -44,7 +45,7 @@ class DataManager implements IDataManager {
 				break;
 			case 'users':
 				$data = [
-					//1 => new User(1, "scm4", "a8af855d47d091f0376664fe588207f334cdad22"), //USER = scm4; PASSWORD = scm4
+					1 => new User(1, "scm4", "a8af855d47d091f0376664fe588207f334cdad22"), //USER = scm4; PASSWORD = scm4
 				];
 				break;
 		}
@@ -69,4 +70,23 @@ class DataManager implements IDataManager {
 		}
 		return $res;
 	}
+
+	public static function getUserById(int $userId) {
+		return array_key_exists($userId, self::getMockData('users')) ?
+			self::getMockData('users')[$userId] : null;
+	}
+
+	public static function getUserByUserName(string $userName) {
+		foreach (self::getMockData('users') AS $user) {
+			if ($user->getUserName() === $userName) {
+				return $user;
+			}
+		}
+		return null;
+	}
+
+	public static function createOrder(int $userId, array $bookIds, string $nameOnCard, string $cardNumber) : int {
+		return rand();
+	}
+
 }

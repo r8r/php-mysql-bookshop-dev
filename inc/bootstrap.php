@@ -14,13 +14,14 @@ spl_autoload_register(function($class) { // Bookshop\Category
 	}
 });
 
+Bookshop\SessionContext::create();
 
 $mode = 'mock';
 
 switch (mb_strtolower($mode)) {
 	case 'pdo':
-			$class = 'mysqlpdo';
-			break;
+		$class = 'mysqlpdo';
+		break;
 	default:
 		$class = 'mock';
 		break;

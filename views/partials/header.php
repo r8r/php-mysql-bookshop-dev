@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+
+use Bookshop\ShoppingCart;
+use Bookshop\AuthenticationManager;
+use Bookshop\Util;
+
+if (isset($_GET["errors"])) {
+	$errors = unserialize(urldecode($_GET["errors"]));
+}
+$user = AuthenticationManager::getAuthenticatedUser();
+
+?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -29,27 +40,45 @@
 
 		<div class="navbar-collapse collapse" id="bs-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.php">Home</a></li>
-				<li><a href="index.php?view=list">List</a></li>
-				<li><a href="index.php?view=search">Search</a></li>
-				<li><a href="index.php?view=checkout">Checkout</a></li>
+        <li  <?php if ($view === 'welcome') { ?>class="active"<?php } ?>><a href="index.php">Home</a></li>
+        <li <?php if ($view === 'list') { ?>class="active"<?php } ?>><a href="index.php?view=list">List</a></li>
+        <li  <?php if ($view === 'search') { ?>class="active"<?php } ?>><a href="index.php?view=search">Search</a></li>
+        <li  <?php if ($view === 'checkout') { ?>class="active"<?php } ?>><a href="index.php?view=checkout">Checkout</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right login">
 				<li>
 					<a href="index.php?view=checkout">
-						<span class="badge">0</span> <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+						<span class="badge">
+              <?php print ShoppingCart::size(); ?>
+            </span><span class="glyphicon glyphicon-shopping-cart"
+                                                        aria-hidden="true"></span></a>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-						Not logged in!
-						<b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu" role="menu">
-						<li>
-							<a href="index.php?view=login">Login now</a>
-						</li>
-					</ul>
-				</li>
+					<?php if ($user == null): ?>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              Not logged in!
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="index.php?view=login">Login now</a>
+              </li>
+            </ul>
+					<?php else: ?>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              Logged in as  <span class="badge"><?php echo Util::escape($user->getUserName()); ?></span>
+              <b class="caret"></b>
+            </a>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="centered">
+                <form method="post" action="<?php echo Util::action(Bookshop\Controller::ACTION_LOGOUT); ?>">
+                  <input class="btn btn-xs" role="button" type="submit" value="Logout" />
+                </form>
+              </li>
+            </ul>
+					<?php endif; ?>
+        </li>
 			</ul> <!-- /. login -->
 		</div><!--/.navbar-collapse -->
 

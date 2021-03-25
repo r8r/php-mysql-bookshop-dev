@@ -1,5 +1,20 @@
+<?php
+
+use Bookshop\ShoppingCart;
+use Bookshop\Util;
+
+?>
 
 <!--display error messages-->
+<?php if (isset($errors) && is_array($errors)): ?>
+    <div class="errors alert alert-danger">
+      <ul>
+        <?php foreach ($errors as $errMsg): ?>
+          <li><?php echo(Util::escape($errMsg)); ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+<?php endif; ?>
 
 <!--/display error messages-->
 <div class="footer">
@@ -7,7 +22,7 @@
 	<hr />
 	<div class="col-sm-8">
 		<button class="btn btn-primary btn-xs" type="button">
-			<span class="badge">0</span> items in cart
+			<span class="badge"><?php print ShoppingCart::size(); ?></span> items in cart
 		</button>
 	</div>
 	<div class="col-sm-4 pull-right">
