@@ -16,7 +16,7 @@ spl_autoload_register(function($class) { // Bookshop\Category
 
 Bookshop\SessionContext::create();
 
-$mode = 'mock';
+$mode = 'pdo';
 
 switch (mb_strtolower($mode)) {
 	case 'pdo':

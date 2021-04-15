@@ -30,7 +30,8 @@ class DataManager implements IDataManager {
 				break;
 			case 'books':
 				$data = [
-					1  => new Book(1, 1, "Hello, Android:\nIntroducing Google's Mobile Development Platform", "Ed Burnette", 19.97),
+					1  => new Book(1, 1, "Hello, Android:\nIntroducing Google's Mobile Development Platform", "Ed Burnette",
+						19.97),
 					2  => new Book(2, 1, "Android Wireless Application Development", "Shane Conder, Lauren Darcey", 31.22),
 					5  => new Book(5, 1, "Professional Flash Mobile Development", "Richard Wagner", 19.90),
 					7  => new Book(7, 1, "Mobile Web Design For Dummies", "Janine Warner, David LaFontaine", 16.32),
