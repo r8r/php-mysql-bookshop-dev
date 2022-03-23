@@ -1,6 +1,6 @@
-DROP DATABASE fh_scm4_bookshop;
-CREATE DATABASE fh_scm4_bookshop;
-USE fh_scm4_bookshop;
+DROP DATABASE db;
+CREATE DATABASE db;
+USE db;
 
 CREATE TABLE books (
 	id int(11) NOT NULL AUTO_INCREMENT,
