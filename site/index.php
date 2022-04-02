@@ -10,4 +10,10 @@ if (
 	$view = $_REQUEST['view'];
 }
 
+$postAction = $_REQUEST[\Bookshop\Controller::ACTION] ?? null;
+if ($postAction != null) {
+	\Bookshop\Controller::getInstance()->invokePostAction();
+}
+
+
 require_once('views' . DIRECTORY_SEPARATOR . $view . '.php');

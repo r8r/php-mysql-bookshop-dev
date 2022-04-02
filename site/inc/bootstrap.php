@@ -10,13 +10,17 @@ $dm_mode = 'mock';
 // ---------
 
 spl_autoload_register(function ($class) {
-
 	$filename = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
 
 	if (file_exists($filename)) {
 		require_once ($filename);
 	}
 });
+
+
+//session_start();
+\Bookshop\SessionContext::create();
+// ab hier ist $_SESSION verfügbar
 
 $dm_class = match (mb_strtolower($dm_mode)) {
 	'mysqli' => 'mysqli',

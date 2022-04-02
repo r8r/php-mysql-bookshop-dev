@@ -4,7 +4,7 @@ namespace Data;
 
 use Bookshop\Category;
 use Bookshop\Book;
-//use Bookshop\User;
+use Bookshop\User;
 //use Bookshop\PagingResult;
 
 /**
@@ -49,6 +49,11 @@ class DataManager implements IDataManager {
 					29 => new Book(29, 3, "The C++ Programming Language", "Bjarne Stroustrup", 67.49),
 				];
 				break;
+			case 'users':
+				$data = [
+					1 => new User(1, "scm4", "a8af855d47d091f0376664fe588207f334cdad22"), //USER = scm4; PASSWORD = scm4
+				];
+				break;
 		}
 		return $data;
 
@@ -77,5 +82,21 @@ class DataManager implements IDataManager {
 		return $result;
 	}
 
+	public static function getUserByUserName(string $userName) : ?User {
+		foreach (self::getMockData('users') AS $user) {
+			if ($user->getUserName() === $userName) {
+				return $user;
+			}
+		}
+		return null;
+	}
+
+	public static function getUserById(int $userId) : ?User {
+		return array_key_exists($userId, self::getMockData('users')) ? self::getMockData('users')[$userId] : null;
+	}
+
+	public static function createOrder(int $userId, array $bookIds, string $nameOnCard, string $cardNumber) : int {
+		return rand();
+	}
 
 }
