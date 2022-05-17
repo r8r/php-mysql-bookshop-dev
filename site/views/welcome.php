@@ -1,5 +1,10 @@
 <?php
 require_once('views/partials/header.php');
+
+use Data\DataManager;
+
+//print_r(DataManager::exposeConnection());
+
 ?>
 
 	<div class="page-header">

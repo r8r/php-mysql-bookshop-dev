@@ -5,7 +5,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 $default_view = 'welcome';
-$dm_mode = 'mock';
+//$dm_mode = 'mock';
+$dm_mode = 'pdo';
 
 // ---------
 
