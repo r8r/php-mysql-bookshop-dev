@@ -28,7 +28,7 @@ class DataManager implements IDataManager {
 			// connection aufbauen
 
 			$type = 'mysql';
-			$host = 'localhost';
+			$host = 'db';
 			$name = 'db';
 			$user = 'db';
 			$pass = 'db';
