@@ -4,20 +4,20 @@
 * Class: 
 * Year: 
 * Author: Elmar Putz <ep@studiomitte.com> & Mario Rader <mr@studiomitte.com>
-* Technology: PHP 
+* Technology: PHP
 
 ## Setup
 
-* XAMPP <https://www.apachefriends.org> oder MAMP <https://www.mamp.info/en/downloads/> laden & installieren
-* Apache Document Root auf Dev-Rootverzeichnis richten
-* Go.
+* run `ddev start`
+* Launch project: `ddev launch`
+* Launch phpMyAdmin: `ddev launch -p`
 
 ### MySQL
 
-* Host: ```localhost```
-* User: ```root```
-* Pass: ```root```
-* Name: ```fh_scm4_bookshop```
+* Host: ```db```
+* User: ```db```
+* Pass: ```db```
+* Name: ```db```
 
 ## Code
 * Live: 
