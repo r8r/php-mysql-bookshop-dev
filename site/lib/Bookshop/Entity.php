@@ -2,7 +2,7 @@
 
 namespace Bookshop;
 
-class Entity {
+class Entity extends BaseObject {
 
 	private int $id;
 

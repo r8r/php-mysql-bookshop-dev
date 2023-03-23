@@ -14,6 +14,8 @@ spl_autoload_register(function($class) {
 	}
 });
 
+\Bookshop\SessionContext::create();
+
 $mode = 'mock';
 switch (strtolower($mode)) {
 	case 'pdo':

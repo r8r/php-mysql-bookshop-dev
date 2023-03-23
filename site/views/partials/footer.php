@@ -7,7 +7,7 @@
 	<hr />
 	<div class="col-sm-8">
 		<button class="btn btn-primary btn-xs" type="button">
-			<span class="badge">0</span> items in cart
+			<span class="badge"><?php print \Bookshop\ShoppingCart::size(); ?></span> items in cart
 		</button>
 	</div>
 	<div class="col-sm-4 pull-right">
