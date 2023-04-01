@@ -1,6 +1,19 @@
 
 <!--display error messages-->
 
+<?php
+use Bookshop\Util;
+
+if (isset($errors) && is_array($errors)): ?>
+    <div class="errors alert alert-danger">
+      <ul>
+        <?php foreach ($errors as $errMsg): ?>
+          <li><?php echo(Util::escape($errMsg)); ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+<?php endif; ?>
+
 <!--/display error messages-->
 <div class="footer">
 	<!--display cart info-->

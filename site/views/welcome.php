@@ -1,5 +1,6 @@
 <?php
 require_once('views/partials/header.php');
+//print_r(Data\DataManager::exposeConnection());
 ?>
 	<div class="page-header">
 		<h2>Welcome</h2>
