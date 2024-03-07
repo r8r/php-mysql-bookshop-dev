@@ -10,7 +10,7 @@
 
 * run `ddev start`
 * Launch project: `ddev launch`
-* Launch phpMyAdmin: `ddev launch -p`
+* Launch phpMyAdmin: `ddev phpmyadmin`
 
 ### MySQL
 
