@@ -1,24 +1,26 @@
 body {
-  padding-top: 60px;
+  padding-top: 90px;
 }
 
-.centered {
-  text-align: center;
+
+.page-header {
+  margin-bottom: 1.5rem;
 }
 
-.navbar .login {
-  float: right;
-}
-.navbar .login form {
-  margin: 0; padding: 0;
-}
 
 .footer {
-
   margin-top: 30px;
 }
 
-.add-remove input {
-    width: 30px;
-    text-algin: center;
+.footer-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
