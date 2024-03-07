@@ -1,8 +1,8 @@
 # Bookstore 
 
-* Institution: 
-* Class: 
-* Year: 
+* Institution: FH Hagenberg
+* Class: 17_SCR4ILV Scripting (SE.ba BB SS24) Gr. Rader
+* Year: 2024
 * Author: Elmar Putz <ep@studiomitte.com> & Mario Rader <mr@studiomitte.com>
 * Technology: PHP
 
