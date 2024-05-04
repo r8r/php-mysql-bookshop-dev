@@ -1,5 +1,6 @@
 <?php
-//use Bookshop\ShoppingCart, Bookshop\Util;
+//use Bookshop\ShoppingCart
+use Bookshop\Util;
 ?>
 
 <table class="table">
@@ -26,11 +27,11 @@
 		?>
 		<tr>
 			<td><strong>
-					<?php echo $book->getTitle(); ?>
+					<?php echo Util::escape($book->getTitle()); ?>
 				</strong>
 			</td>
 			<td>
-				<?php echo ($book->getAuthor(); ?>
+				<?php echo Util::escape($book->getAuthor()); ?>
 			</td>
 			<td>
 				<?php echo sprintf('%01.2f', $book->getPrice()); ?>&nbsp;&euro;

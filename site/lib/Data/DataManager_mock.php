@@ -2,7 +2,7 @@
 
 namespace Data;
 use Bookshop\Category;
-//use Bookshop\Book;
+use Bookshop\Book;
 //use Bookshop\User;
 //use Bookshop\PagingResult;
 
@@ -35,7 +35,6 @@ class DataManager implements IDataManager
 					4 => new Category(4, "<< New Publications >>"),
 				];
 				break;
-				/*
 			case 'books':
 				$data = [
 					1  => new Book(1, 1, "Hello, Android:\nIntroducing Google's Mobile Development Platform", "Ed Burnette", 19.97),
@@ -51,7 +50,6 @@ class DataManager implements IDataManager
 					29 => new Book(29, 3, "The C++ Programming Language", "Bjarne Stroustrup", 67.49),
 				];
 				break;
-				*/
 			/*
 			case 'users':
 				$data = [
@@ -66,6 +64,21 @@ class DataManager implements IDataManager
 
 	public static function getCategories() : array {
 		return self::getMockData('categories');
+	}
+
+
+	public static function getBooksByCategory(int $categoryId) : array {
+		$return = [];
+
+		$books = self::getMockData('books');
+
+		foreach ($books AS $book) {
+			if ($book->getCategoryId() === $categoryId) {
+				$return[] = $book;
+			}
+		}
+
+		return $return;
 	}
 
 	// /mock data
