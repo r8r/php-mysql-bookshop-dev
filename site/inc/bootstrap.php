@@ -14,6 +14,8 @@ spl_autoload_register(
 	}
 );
 
+\Bookshop\SessionContext::create();
+
 $dm = 'mock';
 //$dm = 'mysqlpdo';
 require_once(__DIR__ . '/../lib/Data/DataManager_' . $dm . '.php');

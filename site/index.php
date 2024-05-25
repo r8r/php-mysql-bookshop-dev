@@ -1,5 +1,13 @@
 <?php
+
 require_once('inc/bootstrap.php');
+
+/* if we have a form post, invoke the controller */
+$postAction = $_REQUEST[Bookshop\Controller::ACTION] ?? null;
+if ($postAction != null) {
+	Bookshop\Controller::getInstance()->invokePostAction();
+}
+
 
 $view = $default_view;
 
