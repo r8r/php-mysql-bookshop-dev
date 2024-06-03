@@ -19,9 +19,21 @@ class ShoppingCart extends BaseObject {
 		self::storeCart($cart);
 	}
 
+	public static function clear() : void {
+		self::storeCart([]);
+	}
+
 	public static function contains(int $bookId) : bool {
 		$cart = self::getCart();
 		return isset($cart[$bookId]);
+	}
+
+	public static function size() : int {
+		return sizeof(self::getCart());
+	}
+
+	public static function getAll() : array {
+		return self::getCart();
 	}
 
 	private static function getCart() : array {

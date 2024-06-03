@@ -1,4 +1,15 @@
+<?php
+use Bookshop\Util;
 
+if (isset($errors) && is_array($errors)) : ?>
+  <div class="errors alert alert-danger mt-4">
+    <ul>
+			<?php foreach ($errors as $errMsg) : ?>
+        <li><?php echo (Util::escape($errMsg)); ?></li>
+			<?php endforeach; ?>
+    </ul>
+  </div>
+<?php endif; ?>
 <!--display error messages-->
 
 
@@ -11,11 +22,11 @@
   <div class="row">
     <div class="col-md-4">
       <a href="index.php?view=checkout" class="footer-link"  data-bs-toggle="tooltip" data-bs-placement="top" title="Zum Checkout">
-        <span class="badge bg-secondary">0</span> <span class="bi bi-cart4" aria-hidden="true"></span>
+        <span class="badge bg-secondary"><?php print Util::escape($cartSize); ?></span> <span class="bi bi-cart4" aria-hidden="true"></span>
       </a>
     </div>
     <div class="col-md-4 ms-auto text-end">
-      <p>01.03.2024 12:00</p>
+      <p><?php print Util::escape(date('j.n.Y G:i', time())); ?></p>
     </div>
   </div>
 
